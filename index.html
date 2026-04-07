@@ -252,15 +252,43 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
   <h2 class="stitle reveal">Mes projets</h2>
   <p class="ssub reveal">Projets académiques et personnels démontrant mes compétences techniques.</p>
   <div class="pgrid">
-    <div class="pc highlight reveal" style="position:relative">
-      <div class="pnew">RÉCENT</div>
-      <div class="ph" style="background:linear-gradient(135deg,#0A1929,#132F4C)">📱</div>
-      <div class="pb"><div class="pbadge">Développement Mobile</div><div class="ptitle">SmartRoutines</div><p class="pdesc">Application Android complète de gestion de routines. Architecture MVVM, Room, Firebase Auth, calendrier interactif, sélecteurs natifs date/heure et design sombre moderne.</p><div class="pfoot"><div class="tags"><span class="tb">Kotlin</span><span class="tc">Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div><div class="plinks">
-    <a href="https://github.com/ton-pseudo/smartroutines" class="plink" target="_blank" aria-label="Code source">🐙</a>
-    <a href="#" class="plink" aria-label="Voir les captures d'écran">📸</a>
-  </div>
-</div>
+   div class="pc highlight reveal" style="position:relative">
+  <!-- Badge "RÉCENT" -->
+  <div class="pnew">RÉCENT</div>
+  
+  <!-- Header avec icône -->
+  <div class="ph" style="background:linear-gradient(135deg,#0A1929,#132F4C)">📱</div>
+  
+  <!-- Corps de la carte -->
+  <div class="pb">
+    <div class="pbadge">Développement Mobile</div>
+    <div class="ptitle">SmartRoutines</div>
+    <p class="pdesc">Application Android complète de gestion de routines. Architecture MVVM, Room, Firebase Auth, calendrier interactif, sélecteurs natifs date/heure et design sombre moderne.</p>
+    
+    <!-- Footer avec tags et liens -->
+    <div class="pfoot">
+      <div class="tags">
+        <span class="tb">Kotlin</span>
+        <span class="tc">Compose</span>
+        <span class="tg">Room</span>
+        <span class="ty">Firebase</span>
+      </div>
+      <div class="plinks">
+        <!-- Lien GitHub avec ton vrai pseudo -->
+        <a href="https://github.com/Khaled-hamdaoui" 
+           class="plink" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Voir le code source de SmartRoutines sur GitHub">🐙</a>
+        <!-- Lien screenshots (à activer quand tu auras des images) -->
+        <a href="#screenshots" 
+           class="plink" 
+           aria-label="Voir les captures d'écran"
+           onclick="return false;">📸</a>
+      </div>
     </div>
+  </div>
+
     <div class="pc reveal rd1">
       <div class="ph" style="background:linear-gradient(135deg,#002850,#0078D4)">☁️</div>
       <div class="pb"><div class="pbadge">Cloud &amp; Sécurité</div><div class="ptitle">Infrastructure Azure Sécurisée</div><p class="pdesc">Déploiement Azure via ARM Templates + Key Vault. Managed Identity, slots staging/production, Azure Functions serverless, traçabilité Git complète.</p><div class="pfoot"><div class="tags"><span class="tc">Azure ARM</span><span class="tc">Key Vault</span><span class="ty">CI/CD</span><span class="tb">C#</span></div><a href="#" class="plink">↗</a></div></div>
