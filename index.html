@@ -95,7 +95,7 @@ section{padding:96px 60px;position:relative}
 .to{background:rgba(251,146,60,.1);color:var(--orange);border-color:rgba(251,146,60,.18)}
 #projects{background:var(--bg)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(335px,1fr));gap:20px}
-.pc{background:var(--card);border:1px solid rgba(74,144,226,.09);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.pc{background:var(--card);border:1px solid rgba(74,144,226,.09);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;position:relative}
 .pc:hover{transform:translateY(-5px);box-shadow:0 26px 66px rgba(0,0,0,.44);border-color:rgba(74,144,226,.27)}
 .ph{height:145px;display:flex;align-items:center;justify-content:center;font-size:50px;position:relative;overflow:hidden}
 .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--card))}
@@ -107,7 +107,7 @@ section{padding:96px 60px;position:relative}
 .plink{width:32px;height:32px;border-radius:8px;background:rgba(74,144,226,.13);border:1px solid rgba(74,144,226,.2);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;color:var(--white);transition:background .2s;flex-shrink:0}
 .plink:hover{background:rgba(74,144,226,.28)}
 .pc.highlight{border-color:rgba(74,144,226,.22);box-shadow:0 0 36px rgba(74,144,226,.07)}
-.pnew{position:absolute;top:10px;right:10px;z-index:1;background:var(--green);color:#000;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:1px}
+.pnew{position:absolute;top:10px;right:10px;z-index:2;background:var(--green);color:#000;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:1px}
 #formation{background:var(--bg2)}
 .ftl{max-width:700px;display:flex;flex-direction:column}
 .ti{display:flex;gap:22px;position:relative;padding-bottom:38px}
@@ -178,12 +178,12 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
   <button class="menu-btn" id="mbtn" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nl">
     <li><a href="#stage">Stage</a></li>
-    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#skills">Competences</a></li>
     <li><a href="#projects">Projets</a></li>
     <li><a href="#formation">Formation</a></li>
-    <li><a href="#about">À propos</a></li>
+    <li><a href="#about">A propos</a></li>
   </ul>
-  <a href="mailto:khaledhamdaoui24@gmail.com" class="nav-cta">✉️ Me contacter</a>
+  <a href="mailto:khaledhamdaoui24@gmail.com" class="nav-cta">Me contacter</a>
 </nav>
  
 <section id="hero">
@@ -191,21 +191,21 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
   <div class="hcontent">
     <div class="badges">
       <span class="badge b1">Disponible pour stage N1 &amp; N2</span>
-      <span class="badge b2">🔐 Cybersécurité</span>
-      <span class="badge b3">☁️ Cloud Azure</span>
-      <span class="badge b4">🤖 IA &amp; Dev</span>
+      <span class="badge b2">Cybersecurite</span>
+      <span class="badge b3">Cloud Azure</span>
+      <span class="badge b4">IA &amp; Dev</span>
     </div>
     <h1 class="hname">Khaled<br><span class="l2">Hamdaoui</span></h1>
-    <p class="htag">Étudiant en <strong>informatique à l'UQAC</strong> — spécialisé en <strong>cybersécurité défensive</strong>, <strong>cloud Microsoft Azure</strong> et <strong>développement logiciel</strong>. GPA 3.43 / 4.30 · Scrum Master · Disponible pour stage.</p>
+    <p class="htag">Etudiant en <strong>informatique a l'UQAC</strong> — <strong>cybersecurite defensive</strong>, <strong>cloud Microsoft Azure</strong> et <strong>developpement logiciel</strong>. GPA 3.43 / 4.30 · Scrum Master · Disponible pour stage.</p>
     <div class="hctas">
-      <a href="#projects" class="btn-m">📁 Mes projets</a>
-      <a href="#contact" class="btn-o">📞 Contact</a>
+      <a href="#projects" class="btn-m">Mes projets</a>
+      <a href="#contact" class="btn-o">Contact</a>
     </div>
   </div>
   <div class="hside">
-    <div class="fc"><div class="fi" style="background:rgba(239,68,68,.12)">🔐</div><div class="ft"><strong>Cybersécurité défensive</strong><span>MITRE ATT&amp;CK · NIST · SOC</span></div></div>
+    <div class="fc"><div class="fi" style="background:rgba(239,68,68,.12)">🔐</div><div class="ft"><strong>Cybersecurite defensive</strong><span>MITRE ATT&CK · NIST · SOC</span></div></div>
     <div class="fc"><div class="fi" style="background:rgba(56,189,248,.12)">☁️</div><div class="ft"><strong>Cloud Microsoft Azure</strong><span>Functions · ARM · Key Vault</span></div></div>
-    <div class="fc"><div class="fi" style="background:rgba(74,222,128,.12)">📱</div><div class="ft"><strong>Développement Android</strong><span>Kotlin · Compose · MVVM</span></div></div>
+    <div class="fc"><div class="fi" style="background:rgba(74,222,128,.12)">📱</div><div class="ft"><strong>Developpement Android</strong><span>Kotlin · Compose · MVVM</span></div></div>
     <div class="fc"><div class="fi" style="background:rgba(167,139,250,.12)">🤖</div><div class="ft"><strong>IA &amp; Optimisation</strong><span>LangChain · RAG · Python</span></div></div>
   </div>
 </section>
@@ -214,20 +214,20 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
   <div class="sbox reveal">
     <div class="sl">
       <div class="eyebrow">Recherche active</div>
-      <h2>Stage en <span>informatique</span><br>— Hiver / Été 2026</h2>
-      <p>Je recherche un <strong style="color:var(--white)">stage de fin d'études (N1 ou N2)</strong> pour appliquer mes compétences en cybersurveillance, automatisation Azure et développement logiciel. Disponible en présentiel à Chicoutimi ou en télétravail.</p>
+      <h2>Stage en <span>informatique</span> — Ete 2026</h2>
+      <p>Je recherche un <strong style="color:var(--white)">stage pour l'ete 2026</strong> dans le domaine de l'informatique, que ce soit en developpement logiciel, en cloud Azure, en cybersecurite ou en intelligence artificielle. Oriente vers les resultats, je souhaite contribuer activement a des projets concrets au sein d'une equipe dynamique.</p>
       <div class="schips">
-        <span class="sc scr">🔐 SOC / Cybersurveillance</span>
+        <span class="sc scg">💻 Developpement logiciel</span>
         <span class="sc scc">☁️ Azure / DevOps</span>
-        <span class="sc scp">📱 Développement Mobile</span>
-        <span class="sc scg">🛡️ Sécurité Applicative</span>
+        <span class="sc scr">🔐 Cybersecurite</span>
+        <span class="sc scp">🤖 Intelligence Artificielle</span>
       </div>
     </div>
     <div class="sr">
-      <div class="ir"><div class="ii">📍</div><div class="it"><strong>Chicoutimi, Québec</strong><span>Présentiel ou télétravail</span></div></div>
-      <div class="ir"><div class="ii">🎓</div><div class="it"><strong>Bac. Informatique — UQAC</strong><span>Diplôme prévu avril 2027</span></div></div>
-      <div class="ir"><div class="ii">⭐</div><div class="it"><strong>GPA : 3.43 / 4.30</strong><span>Focus cybersécurité &amp; infonuagique</span></div></div>
-      <div class="ir"><div class="ii">🚗</div><div class="it"><strong>Permis de conduire Classe 5</strong><span>Mobilité assurée</span></div></div>
+      <div class="ir"><div class="ii">📍</div><div class="it"><strong>Chicoutimi, Quebec</strong><span>Presentiel ou teletravail</span></div></div>
+      <div class="ir"><div class="ii">🎓</div><div class="it"><strong>Bac. Informatique — UQAC</strong><span>Diplome prevu avril 2027</span></div></div>
+      <div class="ir"><div class="ii">⭐</div><div class="it"><strong>GPA : 3.43 / 4.30</strong><span>Focus cybersecurite &amp; infonuagique</span></div></div>
+      <div class="ir"><div class="ii">🚗</div><div class="it"><strong>Permis de conduire Classe 5</strong><span>Mobilite assuree</span></div></div>
       <div class="ir"><div class="ii">📧</div><div class="it"><strong>khaledhamdaoui24@gmail.com</strong><span>+1 438-872-5686</span></div></div>
     </div>
   </div>
@@ -235,105 +235,73 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
  
 <section id="skills">
   <div class="eyebrow">Expertise technique</div>
-  <h2 class="stitle reveal">Mes compétences</h2>
-  <p class="ssub reveal">Technologies maîtrisées à travers mes cours à l'UQAC et mes projets.</p>
+  <h2 class="stitle reveal">Mes competences</h2>
+  <p class="ssub reveal">Technologies maitrisees a travers mes cours a l'UQAC et mes projets.</p>
   <div class="sgrid">
-    <div class="skc reveal"><span class="ski">🔐</span><div class="skn">Cybersécurité &amp; Forensics</div><div class="skd">Triage d'alertes SOC, analyse de vulnérabilités, réponse aux incidents NIST, cadres MITRE ATT&amp;CK et D3FEND, documentation VERIS. Analyse forensique Autopsy.</div><div class="skb"><div class="skbf" data-w="82%" style="background:linear-gradient(90deg,var(--red),#f97316)"></div></div><div class="tags"><span class="tr">MITRE ATT&amp;CK</span><span class="tr">NIST</span><span class="tr">Autopsy</span><span class="tb">D3FEND</span><span class="tb">OWASP</span></div></div>
-    <div class="skc reveal rd1"><span class="ski">☁️</span><div class="skn">Cloud Microsoft Azure</div><div class="skd">Déploiement ARM Templates, Azure Functions serverless C#, Key Vault + Managed Identity, pipelines CI/CD avec slots staging/production, hébergement Blob Storage.</div><div class="skb"><div class="skbf" data-w="80%" style="background:linear-gradient(90deg,var(--cyan),var(--blue))"></div></div><div class="tags"><span class="tc">Azure Functions</span><span class="tc">ARM Templates</span><span class="tc">Key Vault</span><span class="tc">DevOps</span><span class="ty">YAML</span></div></div>
-    <div class="skc reveal rd2"><span class="ski">📱</span><div class="skn">Développement Android</div><div class="skd">Applications natives MVVM complètes. Room, Firebase Auth, navigation Jetpack Compose, design system moderne avec animations et splash screen.</div><div class="skb"><div class="skbf" data-w="85%" style="background:linear-gradient(90deg,var(--green),var(--cyan))"></div></div><div class="tags"><span class="tb">Kotlin</span><span class="tc">Jetpack Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div></div>
-    <div class="skc reveal"><span class="ski">🤖</span><div class="skn">Intelligence Artificielle</div><div class="skd">IA générative avec LangChain et RAG, modélisation mathématique de problèmes métier, algorithmes d'optimisation (simplexe), intégration d'API IA Python.</div><div class="skb"><div class="skbf" data-w="75%" style="background:linear-gradient(90deg,var(--purple),var(--blue))"></div></div><div class="tags"><span class="tp">LangChain</span><span class="tp">RAG</span><span class="tb">Python</span><span class="ty">Simplexe</span></div></div>
-    <div class="skc reveal rd1"><span class="ski">💻</span><div class="skn">Développement Full-Stack</div><div class="skd">Applications multi-langages, API REST, frameworks web. Bases de données SQL Server, SQLite, modélisation UML/Merise. Java, C# .NET, PHP Laravel.</div><div class="skb"><div class="skbf" data-w="78%" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tags"><span class="tb">Java</span><span class="tb">C# .NET</span><span class="tb">Python</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="ty">Laravel</span></div></div>
-    <div class="skc reveal rd2"><span class="ski">🔧</span><div class="skn">DevOps &amp; Réseaux</div><div class="skd">Pipelines CI/CD, Docker, versionnement Git. Réseaux sécurisés VLAN/ACL Cisco Packet Tracer. Agile Scrum Master, gestion backlog Jira.</div><div class="skb"><div class="skbf" data-w="76%" style="background:linear-gradient(90deg,var(--blue),var(--cyan))"></div></div><div class="tags"><span class="tc">Git/GitHub</span><span class="tb">Docker</span><span class="tb">Cisco PT</span><span class="tp">Jira</span><span class="tp">Scrum</span><span class="tg">Linux</span></div></div>
+    <div class="skc reveal"><span class="ski">🔐</span><div class="skn">Cybersecurite &amp; Forensics</div><div class="skd">Triage d'alertes SOC, analyse de vulnerabilites, reponse aux incidents NIST, cadres MITRE ATT&amp;CK et D3FEND. Analyse forensique Autopsy.</div><div class="skb"><div class="skbf" data-w="82%" style="background:linear-gradient(90deg,var(--red),#f97316)"></div></div><div class="tags"><span class="tr">MITRE ATT&CK</span><span class="tr">NIST</span><span class="tr">Autopsy</span><span class="tb">D3FEND</span><span class="tb">OWASP</span></div></div>
+    <div class="skc reveal rd1"><span class="ski">☁️</span><div class="skn">Cloud Microsoft Azure</div><div class="skd">Deploiement ARM Templates, Azure Functions serverless C#, Key Vault + Managed Identity, pipelines CI/CD avec slots staging/production.</div><div class="skb"><div class="skbf" data-w="80%" style="background:linear-gradient(90deg,var(--cyan),var(--blue))"></div></div><div class="tags"><span class="tc">Azure Functions</span><span class="tc">ARM Templates</span><span class="tc">Key Vault</span><span class="ty">YAML</span></div></div>
+    <div class="skc reveal rd2"><span class="ski">📱</span><div class="skn">Developpement Android</div><div class="skd">Applications natives MVVM completes. Room, Firebase Auth, navigation Jetpack Compose, design system moderne.</div><div class="skb"><div class="skbf" data-w="85%" style="background:linear-gradient(90deg,var(--green),var(--cyan))"></div></div><div class="tags"><span class="tb">Kotlin</span><span class="tc">Jetpack Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div></div>
+    <div class="skc reveal"><span class="ski">🤖</span><div class="skn">Intelligence Artificielle</div><div class="skd">IA generative LangChain et RAG, modelisation mathematique, algorithmes d'optimisation (simplexe), integration d'API IA Python.</div><div class="skb"><div class="skbf" data-w="75%" style="background:linear-gradient(90deg,var(--purple),var(--blue))"></div></div><div class="tags"><span class="tp">LangChain</span><span class="tp">RAG</span><span class="tb">Python</span><span class="ty">Simplexe</span></div></div>
+    <div class="skc reveal rd1"><span class="ski">💻</span><div class="skn">Developpement Full-Stack</div><div class="skd">Applications multi-langages, API REST, frameworks web. Bases de donnees SQL Server, SQLite, modelisation UML/Merise.</div><div class="skb"><div class="skbf" data-w="78%" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tags"><span class="tb">Java</span><span class="tb">C# .NET</span><span class="tb">Python</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="ty">Laravel</span></div></div>
+    <div class="skc reveal rd2"><span class="ski">🔧</span><div class="skn">DevOps &amp; Reseaux</div><div class="skd">Pipelines CI/CD, Docker, versionnement Git. Reseaux securises VLAN/ACL Cisco Packet Tracer. Agile Scrum Master, Jira.</div><div class="skb"><div class="skbf" data-w="76%" style="background:linear-gradient(90deg,var(--blue),var(--cyan))"></div></div><div class="tags"><span class="tc">Git/GitHub</span><span class="tb">Docker</span><span class="tb">Cisco PT</span><span class="tp">Jira</span><span class="tp">Scrum</span><span class="tg">Linux</span></div></div>
   </div>
 </section>
  
 <section id="projects">
-  <div class="eyebrow">Réalisations</div>
+  <div class="eyebrow">Realisations</div>
   <h2 class="stitle reveal">Mes projets</h2>
-  <p class="ssub reveal">Projets académiques et personnels démontrant mes compétences techniques.</p>
+  <p class="ssub reveal">Projets academiques et personnels demontrant mes competences techniques.</p>
   <div class="pgrid">
-   div class="pc highlight reveal" style="position:relative">
-  <!-- Badge "RÉCENT" -->
-  <div class="pnew">RÉCENT</div>
-  
-  <!-- Header avec icône -->
-  <div class="ph" style="background:linear-gradient(135deg,#0A1929,#132F4C)">📱</div>
-  
-  <!-- Corps de la carte -->
-  <div class="pb">
-    <div class="pbadge">Développement Mobile</div>
-    <div class="ptitle">SmartRoutines</div>
-    <p class="pdesc">Application Android complète de gestion de routines. Architecture MVVM, Room, Firebase Auth, calendrier interactif, sélecteurs natifs date/heure et design sombre moderne.</p>
-    
-    <!-- Footer avec tags et liens -->
-    <div class="pfoot">
-      <div class="tags">
-        <span class="tb">Kotlin</span>
-        <span class="tc">Compose</span>
-        <span class="tg">Room</span>
-        <span class="ty">Firebase</span>
-      </div>
-      <div class="plinks">
-        <!-- Lien GitHub avec ton vrai pseudo -->
-        <a href="https://github.com/Khaled-hamdaoui" 
-           class="plink" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           aria-label="Voir le code source de SmartRoutines sur GitHub">🐙</a>
-        <!-- Lien screenshots (à activer quand tu auras des images) -->
-        <a href="#screenshots" 
-           class="plink" 
-           aria-label="Voir les captures d'écran"
-           onclick="return false;">📸</a>
-      </div>
+    <div class="pc highlight reveal">
+      <div class="pnew">RECENT</div>
+      <div class="ph" style="background:linear-gradient(135deg,#0A1929,#132F4C)">📱</div>
+      <div class="pb"><div class="pbadge">Developpement Mobile</div><div class="ptitle">SmartRoutines</div><p class="pdesc">Application Android complete de gestion de routines. Architecture MVVM, Room, Firebase Auth, calendrier interactif, selecteurs natifs date/heure et design sombre moderne.</p><div class="pfoot"><div class="tags"><span class="tb">Kotlin</span><span class="tc">Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
-  </div>
-
     <div class="pc reveal rd1">
       <div class="ph" style="background:linear-gradient(135deg,#002850,#0078D4)">☁️</div>
-      <div class="pb"><div class="pbadge">Cloud &amp; Sécurité</div><div class="ptitle">Infrastructure Azure Sécurisée</div><p class="pdesc">Déploiement Azure via ARM Templates + Key Vault. Managed Identity, slots staging/production, Azure Functions serverless, traçabilité Git complète.</p><div class="pfoot"><div class="tags"><span class="tc">Azure ARM</span><span class="tc">Key Vault</span><span class="ty">CI/CD</span><span class="tb">C#</span></div><a href="#" class="plink">↗</a></div></div>
+      <div class="pb"><div class="pbadge">Cloud &amp; Securite</div><div class="ptitle">Infrastructure Azure Securisee</div><p class="pdesc">Deploiement Azure via ARM Templates + Key Vault. Managed Identity, slots staging/production, Azure Functions serverless, tracabilite Git complete.</p><div class="pfoot"><div class="tags"><span class="tc">Azure ARM</span><span class="tc">Key Vault</span><span class="ty">CI/CD</span><span class="tb">C#</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
     <div class="pc reveal rd2">
       <div class="ph" style="background:linear-gradient(135deg,#1A0B2E,#4A148C)">🔐</div>
-      <div class="pb"><div class="pbadge">Cryptographie &amp; Sécurité</div><div class="ptitle">RSA &amp; Stéganographie</div><p class="pdesc">Implémentation RSA pour sécuriser des flux d'informations et stéganographie pour dissimuler des données dans des images. Interface Java/Python complète.</p><div class="pfoot"><div class="tags"><span class="tb">Java</span><span class="tb">Python</span><span class="tr">RSA</span><span class="tr">Stégano</span></div><a href="#" class="plink">↗</a></div></div>
+      <div class="pb"><div class="pbadge">Cryptographie &amp; Securite</div><div class="ptitle">RSA &amp; Steganographie</div><p class="pdesc">Implementation RSA pour securiser des flux d'informations et steganographie pour dissimuler des donnees dans des images. Interface Java/Python complete.</p><div class="pfoot"><div class="tags"><span class="tb">Java</span><span class="tb">Python</span><span class="tr">RSA</span><span class="tr">Stegano</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
     <div class="pc reveal">
       <div class="ph" style="background:linear-gradient(135deg,#0A1929,#003B75)">🔑</div>
-      <div class="pb"><div class="pbadge">Sécurité CLI</div><div class="ptitle">Gestionnaire de Mots de Passe</div><p class="pdesc">Application CLI sécurisée avec chiffrement pour stockage local. Application rigoureuse de la triade CIA (Confidentialité, Intégrité, Disponibilité). Python + SQLite.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tg">SQLite</span><span class="tr">CIA</span><span class="tr">Chiffrement</span></div><a href="#" class="plink">↗</a></div></div>
+      <div class="pb"><div class="pbadge">Securite CLI</div><div class="ptitle">Gestionnaire de Mots de Passe</div><p class="pdesc">Application CLI securisee avec chiffrement pour stockage local. Application rigoureuse de la triade CIA (Confidentialite, Integrite, Disponibilite). Python + SQLite.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tg">SQLite</span><span class="tr">CIA</span><span class="tr">Chiffrement</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
     <div class="pc reveal rd1">
       <div class="ph" style="background:linear-gradient(135deg,#001A0A,#1B5E20)">🤖</div>
-      <div class="pb"><div class="pbadge">IA &amp; Optimisation</div><div class="ptitle">Optimisation de Processus Réels</div><p class="pdesc">Transformation de problèmes d'entreprise en modèles mathématiques. Résolution via simplexe et intégration d'API IA (LangChain, RAG) sous Python.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tp">LangChain</span><span class="tp">RAG</span><span class="ty">Simplexe</span></div><a href="#" class="plink">↗</a></div></div>
+      <div class="pb"><div class="pbadge">IA &amp; Optimisation</div><div class="ptitle">Optimisation de Processus Reels</div><p class="pdesc">Transformation de problemes d'entreprise en modeles mathematiques. Resolution via simplexe et integration d'API IA (LangChain, RAG) sous Python.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tp">LangChain</span><span class="tp">RAG</span><span class="ty">Simplexe</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
     <div class="pc reveal rd2">
       <div class="ph" style="background:linear-gradient(135deg,#1A0030,#6A1B9A)">📋</div>
-      <div class="pb"><div class="pbadge">Projet Équipe — Scrum Master</div><div class="ptitle">Générateur de Plannings</div><p class="pdesc">Application de génération automatique de plannings sous contraintes multiples. Rôle Scrum Master, coordination Jira, backlog et mêlées quotidiennes. JS + PHP + SQL.</p><div class="pfoot"><div class="tags"><span class="tb">JavaScript</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="tp">Scrum</span></div><a href="#" class="plink">↗</a></div></div>
+      <div class="pb"><div class="pbadge">Projet Equipe — Scrum Master</div><div class="ptitle">Generateur de Plannings</div><p class="pdesc">Application de generation automatique de plannings sous contraintes multiples. Role Scrum Master, coordination Jira, backlog et melees quotidiennes. JS + PHP + SQL.</p><div class="pfoot"><div class="tags"><span class="tb">JavaScript</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="tp">Scrum</span></div><a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="plink">↗</a></div></div>
     </div>
   </div>
 </section>
  
 <section id="formation">
-  <div class="eyebrow">Parcours académique</div>
+  <div class="eyebrow">Parcours academique</div>
   <h2 class="stitle reveal">Formation</h2>
-  <p class="ssub reveal">Une progression alliant rigueur mathématique et expertise technique.</p>
+  <p class="ssub reveal">Une progression alliant rigueur mathematique et expertise technique.</p>
   <div class="ftl">
     <div class="ti reveal">
       <div class="tl2"><div class="tdot a"></div><div class="tline"></div></div>
       <div>
         <div class="td">2024 — 2027 (EN COURS)</div>
-        <div class="ts">Université du Québec à Chicoutimi — UQAC</div>
-        <div class="tdeg">Baccalauréat en informatique / Génie Logiciel</div>
-        <div class="tdet">Spécialisation cybersécurité défensive, infonuagique Azure et IA. Cours complétés : Cybersécurité des réseaux, Architecture Cloud, Informatique mobile, IA &amp; Optimisation, Administration des systèmes.</div>
-        <div class="tgpa">⭐ GPA actuel : 3.43 / 4.30</div>
+        <div class="ts">Universite du Quebec a Chicoutimi — UQAC</div>
+        <div class="tdeg">Baccalaureat en informatique / Genie Logiciel</div>
+        <div class="tdet">Specialisation cybersecurite defensive, infonuagique Azure et IA. Cours completes : Cybersecurite des reseaux, Architecture Cloud, Informatique mobile, IA et Optimisation, Administration des systemes.</div>
+        <div class="tgpa">GPA actuel : 3.43 / 4.30</div>
       </div>
     </div>
     <div class="ti reveal">
       <div class="tl2"><div class="tdot"></div><div class="tline"></div></div>
       <div>
         <div class="td">2020 — 2023</div>
-        <div class="ts">Université Abderrahmane Mira — Béjaïa, Algérie</div>
-        <div class="tdeg">Licence en Mathématiques et Informatique</div>
-        <div class="tdet">Solide formation en logique mathématique, structures de données, probabilités, statistiques et analyse numérique. Base fondamentale pour l'optimisation d'algorithmes et la modélisation formelle.</div>
+        <div class="ts">Universite Abderrahmane Mira — Bejaia, Algerie</div>
+        <div class="tdeg">Licence en Mathematiques et Informatique</div>
+        <div class="tdet">Solide formation en logique mathematique, structures de donnees, probabilites, statistiques et analyse numerique. Base fondamentale pour l'optimisation d'algorithmes et la modelisation formelle.</div>
       </div>
     </div>
   </div>
@@ -345,33 +313,33 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
       <div class="acard">
         <div class="av">KH</div>
         <div class="aname">Khaled Hamdaoui</div>
-        <div class="asub2">Étudiant en informatique — UQAC</div>
+        <div class="asub2">Etudiant en informatique — UQAC</div>
         <div class="astats">
           <div class="astat"><div class="asn">3.43</div><div class="asl">GPA / 4.30</div></div>
           <div class="astat"><div class="asn">6+</div><div class="asl">Projets</div></div>
           <div class="astat"><div class="asn">10+</div><div class="asl">Techno.</div></div>
-          <div class="astat"><div class="asn">2027</div><div class="asl">Diplôme</div></div>
+          <div class="astat"><div class="asn">2027</div><div class="asl">Diplome</div></div>
         </div>
       </div>
     </div>
     <div class="ainfo reveal">
-      <div class="eyebrow">À propos de moi</div>
-      <h3>Passionné par la sécurité et l'innovation</h3>
-      <div class="asub">Chicoutimi, Québec · Disponible pour stage</div>
-      <p>Étudiant au baccalauréat en informatique à l'UQAC avec une spécialisation en <strong style="color:var(--white)">cybersécurité défensive</strong> et <strong style="color:var(--white)">infonuagique Azure</strong>. Mon parcours combine la rigueur mathématique de ma licence algérienne avec l'expertise technique acquise au Canada.</p>
-      <p>J'ai occupé le rôle de <strong style="color:var(--white)">Scrum Master</strong> dans plusieurs projets académiques, ce qui m'a permis de développer des compétences solides en coordination d'équipe, gestion de backlog et communication avec les parties prenantes.</p>
-      <p>Ma philosophie : construire des systèmes à la fois <strong style="color:var(--white)">robustes, sécurisés et maintenables</strong>. Curieux et autonome, je me tiens constamment à jour sur les évolutions en cybersécurité et cloud.</p>
+      <div class="eyebrow">A propos de moi</div>
+      <h3>Developpeur, securite &amp; cloud</h3>
+      <div class="asub">Chicoutimi, Quebec · Disponible pour stage</div>
+      <p>Etudiant au Baccalaureat en informatique a l'UQAC, j'ai bati mon parcours sur une double formation solide : une licence en mathematiques et informatique en Algerie, puis une specialisation technique au Canada. Ce qui me definit, c'est ma capacite a <strong style="color:var(--white)">transformer la theorie en solutions concretes, securisees et performantes</strong>.</p>
+      <p>Je suis passionne par plusieurs domaines complementaires : la <strong style="color:var(--white)">cybersecurite et la protection des donnees</strong>, le <strong style="color:var(--white)">developpement full-stack</strong> avec Java, Python et PHP, le <strong style="color:var(--white)">cloud Azure et l'automatisation DevOps</strong>, ainsi que l'<strong style="color:var(--white)">intelligence artificielle</strong> appliquee a la resolution de problemes reels.</p>
+      <p>En tant que <strong style="color:var(--white)">Scrum Master</strong> dans plusieurs projets academiques, j'ai appris que la reussite d'un projet repose autant sur la communication humaine que sur la performance technique. Curieux, rigoureux et autonome, je me tiens constamment a jour sur les nouvelles technologies.</p>
       <div class="ichips">
         <span class="ic icb">📍 Chicoutimi, QC</span>
         <span class="ic icc">🎓 Bac. Informatique 2027</span>
         <span class="ic icg">🚗 Permis Classe 5</span>
-        <span class="ic icg">✅ Stage N1 / N2</span>
+        <span class="ic icg">Stage ete 2026</span>
       </div>
       <div class="lsec">
         <strong>Langues</strong>
-        <div class="lr"><span class="ln">🇫🇷 Français</span><div class="lb"><div class="lbf" style="width:92%"></div></div></div>
-        <div class="lr"><span class="ln">🇬🇧 Anglais technique</span><div class="lb"><div class="lbf" style="width:64%"></div></div></div>
-        <div class="lr"><span class="ln">🇩🇿 Arabe / Kabyle</span><div class="lb"><div class="lbf" style="width:98%"></div></div></div>
+        <div class="lr"><span class="ln">Francais</span><div class="lb"><div class="lbf" style="width:92%"></div></div></div>
+        <div class="lr"><span class="ln">Anglais technique</span><div class="lb"><div class="lbf" style="width:64%"></div></div></div>
+        <div class="lr"><span class="ln">Arabe / Kabyle</span><div class="lb"><div class="lbf" style="width:98%"></div></div></div>
       </div>
     </div>
   </div>
@@ -380,20 +348,20 @@ footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
 <section id="contact">
   <div class="cbox reveal">
     <div class="eyebrow" style="display:inline-block;margin-bottom:9px">Contact</div>
-    <h3>Parlons de votre projet ✦</h3>
-    <p>Disponible pour un stage en cybersécurité, cloud Azure ou développement logiciel.</p>
+    <h3>Parlons de votre projet</h3>
+    <p>Disponible pour un stage en developpement logiciel, cloud Azure, cybersecurite ou intelligence artificielle.</p>
     <div class="clinks">
       <a href="mailto:khaledhamdaoui24@gmail.com" class="cl hl">📧 khaledhamdaoui24@gmail.com</a>
       <a href="tel:+14388725686" class="cl">📞 +1 438-872-5686</a>
-      <a href="https://linkedin.com/in/khaled-hamdaoui-a36067369" target="_blank" rel="noopener" class="cl">💼 LinkedIn</a>
-      <a href="https://github.com" target="_blank" rel="noopener" class="cl">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/khaled-hamdaoui-a36067369" target="_blank" rel="noopener" class="cl">💼 LinkedIn</a>
+      <a href="https://github.com/Khaled-hamdaoui" target="_blank" rel="noopener" class="cl">🐙 GitHub</a>
     </div>
   </div>
 </section>
  
 <footer>
-  <span>© 2026 Khaled Hamdaoui — UQAC, Chicoutimi QC</span>
-  <span style="color:var(--blue)">Cybersécurité · Cloud Azure · Développement</span>
+  <span>2026 Khaled Hamdaoui — UQAC, Chicoutimi QC</span>
+  <span style="color:var(--blue)">Cybersecurite · Cloud Azure · Developpement</span>
 </footer>
  
 <script>
@@ -416,4 +384,3 @@ window.addEventListener('scroll',()=>{let c='';secs2.forEach(s=>{if(pageYOffset>
 </script>
 </body>
 </html>
- 
