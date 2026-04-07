@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Khaled Hamdaoui — Étudiant en informatique à l'UQAC, spécialisé en cybersécurité, cloud Azure et développement. Disponible pour stage.">
+<title>Khaled Hamdaoui — Cybersécurité · Cloud · Développement</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050D18;--bg2:#0A1929;--bg3:#0D2137;--blue:#4A90E2;--cyan:#38BDF8;--green:#4ADE80;--yellow:#FFD54F;--red:#EF4444;--purple:#A78BFA;--orange:#FB923C;--white:#F0F6FF;--gray:#8899AA;--card:#0F2440}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+.cursor{width:10px;height:10px;background:var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .15s,height .15s}
+.cursor-ring{width:32px;height:32px;border:1.5px solid rgba(74,144,226,.55);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);background:rgba(5,13,24,.9);border-bottom:1px solid rgba(74,144,226,.08);transition:border-color .3s}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--white);text-decoration:none;letter-spacing:-.5px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.65)}}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.4px;transition:color .2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--cyan);border-radius:50%}
+.nav-cta{padding:9px 20px;background:var(--blue);color:white;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 0 20px rgba(74,144,226,.2)}
+.nav-cta:hover{background:#5ba0f2;transform:translateY(-1px)}
+.menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+.menu-btn span{width:22px;height:2px;background:var(--white);border-radius:2px}
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 55% 45%,rgba(74,144,226,.13) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 85% 75%,rgba(56,189,248,.07) 0%,transparent 60%)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,144,226,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,226,.035) 1px,transparent 1px);background-size:64px 64px}
+.hcontent{position:relative;z-index:1;max-width:760px}
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:100px;font-size:12px;font-weight:500;opacity:0;animation:fadeUp .6s forwards}
+.b1{border:1px solid rgba(74,222,128,.35);color:var(--green);background:rgba(74,222,128,.06);animation-delay:.1s}
+.b1::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.b2{border:1px solid rgba(239,68,68,.3);color:var(--red);background:rgba(239,68,68,.06);animation-delay:.2s}
+.b3{border:1px solid rgba(56,189,248,.3);color:var(--cyan);background:rgba(56,189,248,.06);animation-delay:.3s}
+.b4{border:1px solid rgba(167,139,250,.3);color:var(--purple);background:rgba(167,139,250,.06);animation-delay:.4s}
+.hname{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(52px,7.5vw,90px);line-height:.95;letter-spacing:-3px;margin-bottom:20px;opacity:0;animation:fadeUp .7s .3s forwards}
+.hname .l2{color:var(--blue)}
+.htag{font-size:clamp(15px,2vw,18px);color:var(--gray);max-width:570px;margin-bottom:38px;opacity:0;animation:fadeUp .7s .45s forwards;font-weight:300;line-height:1.75}
+.htag strong{color:var(--white);font-weight:500}
+.hctas{display:flex;gap:13px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .55s forwards}
+.btn-m{padding:13px 28px;background:var(--blue);color:white;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 0 28px rgba(74,144,226,.3);display:inline-flex;align-items:center;gap:7px}
+.btn-m:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(74,144,226,.45);background:#5ba0f2}
+.btn-o{padding:13px 28px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.12);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-o:hover{border-color:rgba(74,144,226,.5);background:rgba(74,144,226,.07);transform:translateY(-2px)}
+.hside{position:absolute;right:60px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:13px;opacity:0;animation:slideL .8s .65s forwards}
+.fc{background:rgba(15,36,64,.85);border:1px solid rgba(74,144,226,.14);border-radius:13px;padding:14px 17px;backdrop-filter:blur(12px);display:flex;align-items:center;gap:11px;min-width:205px;transition:all .3s}
+.fc:hover{border-color:rgba(74,144,226,.32);transform:translateX(-4px)}
+.fi{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ft{font-size:12px}
+.ft strong{display:block;color:var(--white);font-size:13px;margin-bottom:1px}
+.ft span{color:var(--gray)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideL{from{opacity:0;transform:translate(22px,-50%)}to{opacity:1;transform:translate(0,-50%)}}
+section{padding:96px 60px;position:relative}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.stitle{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-1px;margin-bottom:13px;line-height:1.1}
+.ssub{color:var(--gray);font-size:16px;max-width:530px;margin-bottom:52px;font-weight:300;line-height:1.75}
+#stage{background:linear-gradient(135deg,var(--bg2),var(--bg3));padding:68px 60px}
+.sbox{max-width:980px;margin:0 auto;background:rgba(15,36,64,.7);border:1px solid rgba(74,144,226,.17);border-radius:26px;padding:50px;backdrop-filter:blur(12px);display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.sl h2{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:13px;line-height:1.25}
+.sl h2 span{color:var(--cyan)}
+.sl p{color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:22px}
+.schips{display:flex;flex-wrap:wrap;gap:9px}
+.sc{padding:7px 16px;border-radius:100px;font-size:12px;font-weight:500;border:1px solid}
+.scr{color:var(--red);border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.07)}
+.scc{color:var(--cyan);border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.07)}
+.scp{color:var(--purple);border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.07)}
+.scg{color:var(--green);border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.07)}
+.sr{display:flex;flex-direction:column;gap:14px}
+.ir{display:flex;align-items:center;gap:13px;padding:13px 16px;background:rgba(74,144,226,.07);border-radius:11px;border:1px solid rgba(74,144,226,.1)}
+.ii{font-size:18px;width:34px;flex-shrink:0;text-align:center}
+.it{font-size:12px}
+.it strong{display:block;color:var(--white);font-size:13px}
+.it span{color:var(--gray)}
+#skills{background:var(--bg2)}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:17px}
+.skc{background:var(--card);border:1px solid rgba(74,144,226,.09);border-radius:17px;padding:25px;transition:all .3s;position:relative;overflow:hidden}
+.skc:hover{border-color:rgba(74,144,226,.27);transform:translateY(-4px);box-shadow:0 20px 54px rgba(74,144,226,.09)}
+.skb{width:100%;height:3px;background:rgba(74,144,226,.1);border-radius:2px;margin-top:15px;overflow:hidden}
+.skbf{height:100%;border-radius:2px;width:0;transition:width 1.2s ease}
+.ski{font-size:26px;margin-bottom:13px;display:block}
+.skn{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:7px}
+.skd{font-size:13px;color:var(--gray);line-height:1.65;margin-bottom:11px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.tag{padding:3px 9px;border-radius:100px;font-size:11px;font-weight:500;border:1px solid}
+.tb{background:rgba(74,144,226,.1);color:var(--blue);border-color:rgba(74,144,226,.18)}
+.tc{background:rgba(56,189,248,.1);color:var(--cyan);border-color:rgba(56,189,248,.18)}
+.tg{background:rgba(74,222,128,.1);color:var(--green);border-color:rgba(74,222,128,.18)}
+.ty{background:rgba(255,213,79,.1);color:var(--yellow);border-color:rgba(255,213,79,.18)}
+.tr{background:rgba(239,68,68,.1);color:var(--red);border-color:rgba(239,68,68,.18)}
+.tp{background:rgba(167,139,250,.1);color:var(--purple);border-color:rgba(167,139,250,.18)}
+.to{background:rgba(251,146,60,.1);color:var(--orange);border-color:rgba(251,146,60,.18)}
+#projects{background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(335px,1fr));gap:20px}
+.pc{background:var(--card);border:1px solid rgba(74,144,226,.09);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-5px);box-shadow:0 26px 66px rgba(0,0,0,.44);border-color:rgba(74,144,226,.27)}
+.ph{height:145px;display:flex;align-items:center;justify-content:center;font-size:50px;position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--card))}
+.pb{padding:20px;flex:1;display:flex;flex-direction:column}
+.pbadge{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
+.ptitle{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:7px}
+.pdesc{font-size:13px;color:var(--gray);line-height:1.65;flex:1;margin-bottom:16px}
+.pfoot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.plink{width:32px;height:32px;border-radius:8px;background:rgba(74,144,226,.13);border:1px solid rgba(74,144,226,.2);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;color:var(--white);transition:background .2s;flex-shrink:0}
+.plink:hover{background:rgba(74,144,226,.28)}
+.pc.highlight{border-color:rgba(74,144,226,.22);box-shadow:0 0 36px rgba(74,144,226,.07)}
+.pnew{position:absolute;top:10px;right:10px;z-index:1;background:var(--green);color:#000;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:1px}
+#formation{background:var(--bg2)}
+.ftl{max-width:700px;display:flex;flex-direction:column}
+.ti{display:flex;gap:22px;position:relative;padding-bottom:38px}
+.ti:last-child{padding-bottom:0}
+.tl2{display:flex;flex-direction:column;align-items:center;width:38px;flex-shrink:0}
+.tdot{width:13px;height:13px;border-radius:50%;border:2px solid var(--blue);background:var(--bg);flex-shrink:0;position:relative;z-index:1}
+.tdot.a{background:var(--blue);box-shadow:0 0 12px rgba(74,144,226,.5)}
+.tline{width:2px;flex:1;background:linear-gradient(to bottom,rgba(74,144,226,.28),rgba(74,144,226,.04));margin-top:6px}
+.td{font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:1px;margin-bottom:5px}
+.ts{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:3px}
+.tdeg{font-size:13px;color:var(--gray);margin-bottom:7px}
+.tdet{font-size:13px;color:var(--gray);line-height:1.7}
+.tgpa{display:inline-flex;align-items:center;gap:5px;margin-top:7px;padding:3px 11px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);border-radius:100px;font-size:12px;color:var(--green);font-weight:600}
+#about{background:var(--bg)}
+.awrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start}
+.acard{background:var(--card);border:1px solid rgba(74,144,226,.1);border-radius:22px;padding:28px;text-align:center}
+.av{width:90px;height:90px;border-radius:20px;background:linear-gradient(135deg,#1565C0,#0288D1);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:white;margin:0 auto 18px;box-shadow:0 0 36px rgba(74,144,226,.22)}
+.aname{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin-bottom:3px}
+.asub2{font-size:12px;color:var(--cyan);margin-bottom:18px}
+.astats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.astat{padding:12px 8px;background:rgba(74,144,226,.07);border-radius:11px;border:1px solid rgba(74,144,226,.1)}
+.asn{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--blue)}
+.asl{font-size:10px;color:var(--gray);margin-top:2px}
+.ainfo h3{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:5px}
+.ainfo .asub{color:var(--cyan);font-size:13px;margin-bottom:18px;font-weight:500}
+.ainfo p{color:var(--gray);font-size:14px;margin-bottom:13px;line-height:1.8}
+.ichips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
+.ic{padding:5px 13px;border-radius:100px;font-size:11px;font-weight:500;border:1px solid}
+.icb{color:var(--white);border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.05)}
+.icc{color:var(--cyan);border-color:rgba(56,189,248,.24);background:rgba(56,189,248,.07)}
+.icg{color:var(--green);border-color:rgba(74,222,128,.24);background:rgba(74,222,128,.07)}
+.lsec strong{font-size:13px;color:var(--white);display:block;margin-bottom:9px}
+.lr{display:flex;align-items:center;gap:11px;margin-bottom:7px}
+.ln{font-size:13px;color:var(--gray);width:130px;flex-shrink:0}
+.lb{flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+.lbf{height:100%;border-radius:2px;background:linear-gradient(to right,var(--blue),var(--cyan))}
+#contact{background:var(--bg2);text-align:center}
+.cbox{max-width:660px;margin:0 auto;background:var(--card);border:1px solid rgba(74,144,226,.13);border-radius:26px;padding:52px;position:relative;overflow:hidden}
+.cbox::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:260px;height:260px;background:radial-gradient(circle,rgba(74,144,226,.1) 0%,transparent 70%);pointer-events:none}
+.cbox h3{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:9px;position:relative}
+.cbox p{color:var(--gray);margin-bottom:30px;position:relative;font-size:15px}
+.clinks{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;position:relative}
+.cl{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:11px;border:1px solid rgba(74,144,226,.17);background:rgba(74,144,226,.07);color:var(--white);text-decoration:none;font-size:13px;font-weight:500;transition:all .2s}
+.cl:hover{background:rgba(74,144,226,.17);border-color:rgba(74,144,226,.42);transform:translateY(-2px)}
+.cl.hl{background:var(--blue);border-color:var(--blue);box-shadow:0 0 22px rgba(74,144,226,.3)}
+.cl.hl:hover{background:#5ba0f2}
+footer{padding:26px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:9px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.07s}.rd2{transition-delay:.14s}.rd3{transition-delay:.21s}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--blue)}
+@media(max-width:960px){
+  nav{padding:15px 18px}.nav-links{position:fixed;top:62px;left:0;right:0;background:var(--bg2);flex-direction:column;padding:18px 22px;gap:16px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid rgba(74,144,226,.1)}.nav-links.open{transform:translateY(0)}.menu-btn{display:flex}.nav-cta{display:none}
+  #hero{padding:96px 18px 60px}.hside{display:none}
+  section{padding:66px 18px}#stage{padding:56px 18px}.sbox{grid-template-columns:1fr;gap:28px}
+  .pgrid{grid-template-columns:1fr}.awrap{grid-template-columns:1fr;gap:28px}
+  footer{flex-direction:column;text-align:center;padding:22px 18px}
+  .cursor,.cursor-ring{display:none}.ftl{max-width:100%}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+ 
+<nav id="nav">
+  <a href="#" class="nav-logo"><div class="dot"></div>Khaled.dev</a>
+  <button class="menu-btn" id="mbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nl">
+    <li><a href="#stage">Stage</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#formation">Formation</a></li>
+    <li><a href="#about">À propos</a></li>
+  </ul>
+  <a href="mailto:khaledhamdaoui24@gmail.com" class="nav-cta">✉️ Me contacter</a>
+</nav>
+ 
+<section id="hero">
+  <div class="hbg"></div><div class="hgrid"></div>
+  <div class="hcontent">
+    <div class="badges">
+      <span class="badge b1">Disponible pour stage N1 &amp; N2</span>
+      <span class="badge b2">🔐 Cybersécurité</span>
+      <span class="badge b3">☁️ Cloud Azure</span>
+      <span class="badge b4">🤖 IA &amp; Dev</span>
+    </div>
+    <h1 class="hname">Khaled<br><span class="l2">Hamdaoui</span></h1>
+    <p class="htag">Étudiant en <strong>informatique à l'UQAC</strong> — spécialisé en <strong>cybersécurité défensive</strong>, <strong>cloud Microsoft Azure</strong> et <strong>développement logiciel</strong>. GPA 3.43 / 4.30 · Scrum Master · Disponible pour stage.</p>
+    <div class="hctas">
+      <a href="#projects" class="btn-m">📁 Mes projets</a>
+      <a href="#contact" class="btn-o">📞 Contact</a>
+    </div>
+  </div>
+  <div class="hside">
+    <div class="fc"><div class="fi" style="background:rgba(239,68,68,.12)">🔐</div><div class="ft"><strong>Cybersécurité défensive</strong><span>MITRE ATT&amp;CK · NIST · SOC</span></div></div>
+    <div class="fc"><div class="fi" style="background:rgba(56,189,248,.12)">☁️</div><div class="ft"><strong>Cloud Microsoft Azure</strong><span>Functions · ARM · Key Vault</span></div></div>
+    <div class="fc"><div class="fi" style="background:rgba(74,222,128,.12)">📱</div><div class="ft"><strong>Développement Android</strong><span>Kotlin · Compose · MVVM</span></div></div>
+    <div class="fc"><div class="fi" style="background:rgba(167,139,250,.12)">🤖</div><div class="ft"><strong>IA &amp; Optimisation</strong><span>LangChain · RAG · Python</span></div></div>
+  </div>
+</section>
+ 
+<section id="stage">
+  <div class="sbox reveal">
+    <div class="sl">
+      <div class="eyebrow">Recherche active</div>
+      <h2>Stage en <span>informatique</span><br>— Hiver / Été 2026</h2>
+      <p>Je recherche un <strong style="color:var(--white)">stage de fin d'études (N1 ou N2)</strong> pour appliquer mes compétences en cybersurveillance, automatisation Azure et développement logiciel. Disponible en présentiel à Chicoutimi ou en télétravail.</p>
+      <div class="schips">
+        <span class="sc scr">🔐 SOC / Cybersurveillance</span>
+        <span class="sc scc">☁️ Azure / DevOps</span>
+        <span class="sc scp">📱 Développement Mobile</span>
+        <span class="sc scg">🛡️ Sécurité Applicative</span>
+      </div>
+    </div>
+    <div class="sr">
+      <div class="ir"><div class="ii">📍</div><div class="it"><strong>Chicoutimi, Québec</strong><span>Présentiel ou télétravail</span></div></div>
+      <div class="ir"><div class="ii">🎓</div><div class="it"><strong>Bac. Informatique — UQAC</strong><span>Diplôme prévu avril 2027</span></div></div>
+      <div class="ir"><div class="ii">⭐</div><div class="it"><strong>GPA : 3.43 / 4.30</strong><span>Focus cybersécurité &amp; infonuagique</span></div></div>
+      <div class="ir"><div class="ii">🚗</div><div class="it"><strong>Permis de conduire Classe 5</strong><span>Mobilité assurée</span></div></div>
+      <div class="ir"><div class="ii">📧</div><div class="it"><strong>khaledhamdaoui24@gmail.com</strong><span>+1 438-872-5686</span></div></div>
+    </div>
+  </div>
+</section>
+ 
+<section id="skills">
+  <div class="eyebrow">Expertise technique</div>
+  <h2 class="stitle reveal">Mes compétences</h2>
+  <p class="ssub reveal">Technologies maîtrisées à travers mes cours à l'UQAC et mes projets.</p>
+  <div class="sgrid">
+    <div class="skc reveal"><span class="ski">🔐</span><div class="skn">Cybersécurité &amp; Forensics</div><div class="skd">Triage d'alertes SOC, analyse de vulnérabilités, réponse aux incidents NIST, cadres MITRE ATT&amp;CK et D3FEND, documentation VERIS. Analyse forensique Autopsy.</div><div class="skb"><div class="skbf" data-w="82%" style="background:linear-gradient(90deg,var(--red),#f97316)"></div></div><div class="tags"><span class="tr">MITRE ATT&amp;CK</span><span class="tr">NIST</span><span class="tr">Autopsy</span><span class="tb">D3FEND</span><span class="tb">OWASP</span></div></div>
+    <div class="skc reveal rd1"><span class="ski">☁️</span><div class="skn">Cloud Microsoft Azure</div><div class="skd">Déploiement ARM Templates, Azure Functions serverless C#, Key Vault + Managed Identity, pipelines CI/CD avec slots staging/production, hébergement Blob Storage.</div><div class="skb"><div class="skbf" data-w="80%" style="background:linear-gradient(90deg,var(--cyan),var(--blue))"></div></div><div class="tags"><span class="tc">Azure Functions</span><span class="tc">ARM Templates</span><span class="tc">Key Vault</span><span class="tc">DevOps</span><span class="ty">YAML</span></div></div>
+    <div class="skc reveal rd2"><span class="ski">📱</span><div class="skn">Développement Android</div><div class="skd">Applications natives MVVM complètes. Room, Firebase Auth, navigation Jetpack Compose, design system moderne avec animations et splash screen.</div><div class="skb"><div class="skbf" data-w="85%" style="background:linear-gradient(90deg,var(--green),var(--cyan))"></div></div><div class="tags"><span class="tb">Kotlin</span><span class="tc">Jetpack Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div></div>
+    <div class="skc reveal"><span class="ski">🤖</span><div class="skn">Intelligence Artificielle</div><div class="skd">IA générative avec LangChain et RAG, modélisation mathématique de problèmes métier, algorithmes d'optimisation (simplexe), intégration d'API IA Python.</div><div class="skb"><div class="skbf" data-w="75%" style="background:linear-gradient(90deg,var(--purple),var(--blue))"></div></div><div class="tags"><span class="tp">LangChain</span><span class="tp">RAG</span><span class="tb">Python</span><span class="ty">Simplexe</span></div></div>
+    <div class="skc reveal rd1"><span class="ski">💻</span><div class="skn">Développement Full-Stack</div><div class="skd">Applications multi-langages, API REST, frameworks web. Bases de données SQL Server, SQLite, modélisation UML/Merise. Java, C# .NET, PHP Laravel.</div><div class="skb"><div class="skbf" data-w="78%" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tags"><span class="tb">Java</span><span class="tb">C# .NET</span><span class="tb">Python</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="ty">Laravel</span></div></div>
+    <div class="skc reveal rd2"><span class="ski">🔧</span><div class="skn">DevOps &amp; Réseaux</div><div class="skd">Pipelines CI/CD, Docker, versionnement Git. Réseaux sécurisés VLAN/ACL Cisco Packet Tracer. Agile Scrum Master, gestion backlog Jira.</div><div class="skb"><div class="skbf" data-w="76%" style="background:linear-gradient(90deg,var(--blue),var(--cyan))"></div></div><div class="tags"><span class="tc">Git/GitHub</span><span class="tb">Docker</span><span class="tb">Cisco PT</span><span class="tp">Jira</span><span class="tp">Scrum</span><span class="tg">Linux</span></div></div>
+  </div>
+</section>
+ 
+<section id="projects">
+  <div class="eyebrow">Réalisations</div>
+  <h2 class="stitle reveal">Mes projets</h2>
+  <p class="ssub reveal">Projets académiques et personnels démontrant mes compétences techniques.</p>
+  <div class="pgrid">
+    <div class="pc highlight reveal" style="position:relative">
+      <div class="pnew">RÉCENT</div>
+      <div class="ph" style="background:linear-gradient(135deg,#0A1929,#132F4C)">📱</div>
+      <div class="pb"><div class="pbadge">Développement Mobile</div><div class="ptitle">SmartRoutines</div><p class="pdesc">Application Android complète de gestion de routines. Architecture MVVM, Room, Firebase Auth, calendrier interactif, sélecteurs natifs date/heure et design sombre moderne.</p><div class="pfoot"><div class="tags"><span class="tb">Kotlin</span><span class="tc">Compose</span><span class="tg">Room</span><span class="ty">Firebase</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+    <div class="pc reveal rd1">
+      <div class="ph" style="background:linear-gradient(135deg,#002850,#0078D4)">☁️</div>
+      <div class="pb"><div class="pbadge">Cloud &amp; Sécurité</div><div class="ptitle">Infrastructure Azure Sécurisée</div><p class="pdesc">Déploiement Azure via ARM Templates + Key Vault. Managed Identity, slots staging/production, Azure Functions serverless, traçabilité Git complète.</p><div class="pfoot"><div class="tags"><span class="tc">Azure ARM</span><span class="tc">Key Vault</span><span class="ty">CI/CD</span><span class="tb">C#</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+    <div class="pc reveal rd2">
+      <div class="ph" style="background:linear-gradient(135deg,#1A0B2E,#4A148C)">🔐</div>
+      <div class="pb"><div class="pbadge">Cryptographie &amp; Sécurité</div><div class="ptitle">RSA &amp; Stéganographie</div><p class="pdesc">Implémentation RSA pour sécuriser des flux d'informations et stéganographie pour dissimuler des données dans des images. Interface Java/Python complète.</p><div class="pfoot"><div class="tags"><span class="tb">Java</span><span class="tb">Python</span><span class="tr">RSA</span><span class="tr">Stégano</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+    <div class="pc reveal">
+      <div class="ph" style="background:linear-gradient(135deg,#0A1929,#003B75)">🔑</div>
+      <div class="pb"><div class="pbadge">Sécurité CLI</div><div class="ptitle">Gestionnaire de Mots de Passe</div><p class="pdesc">Application CLI sécurisée avec chiffrement pour stockage local. Application rigoureuse de la triade CIA (Confidentialité, Intégrité, Disponibilité). Python + SQLite.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tg">SQLite</span><span class="tr">CIA</span><span class="tr">Chiffrement</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+    <div class="pc reveal rd1">
+      <div class="ph" style="background:linear-gradient(135deg,#001A0A,#1B5E20)">🤖</div>
+      <div class="pb"><div class="pbadge">IA &amp; Optimisation</div><div class="ptitle">Optimisation de Processus Réels</div><p class="pdesc">Transformation de problèmes d'entreprise en modèles mathématiques. Résolution via simplexe et intégration d'API IA (LangChain, RAG) sous Python.</p><div class="pfoot"><div class="tags"><span class="tb">Python</span><span class="tp">LangChain</span><span class="tp">RAG</span><span class="ty">Simplexe</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+    <div class="pc reveal rd2">
+      <div class="ph" style="background:linear-gradient(135deg,#1A0030,#6A1B9A)">📋</div>
+      <div class="pb"><div class="pbadge">Projet Équipe — Scrum Master</div><div class="ptitle">Générateur de Plannings</div><p class="pdesc">Application de génération automatique de plannings sous contraintes multiples. Rôle Scrum Master, coordination Jira, backlog et mêlées quotidiennes. JS + PHP + SQL.</p><div class="pfoot"><div class="tags"><span class="tb">JavaScript</span><span class="ty">PHP</span><span class="tg">SQL</span><span class="tp">Scrum</span></div><a href="#" class="plink">↗</a></div></div>
+    </div>
+  </div>
+</section>
+ 
+<section id="formation">
+  <div class="eyebrow">Parcours académique</div>
+  <h2 class="stitle reveal">Formation</h2>
+  <p class="ssub reveal">Une progression alliant rigueur mathématique et expertise technique.</p>
+  <div class="ftl">
+    <div class="ti reveal">
+      <div class="tl2"><div class="tdot a"></div><div class="tline"></div></div>
+      <div>
+        <div class="td">2024 — 2027 (EN COURS)</div>
+        <div class="ts">Université du Québec à Chicoutimi — UQAC</div>
+        <div class="tdeg">Baccalauréat en informatique / Génie Logiciel</div>
+        <div class="tdet">Spécialisation cybersécurité défensive, infonuagique Azure et IA. Cours complétés : Cybersécurité des réseaux, Architecture Cloud, Informatique mobile, IA &amp; Optimisation, Administration des systèmes.</div>
+        <div class="tgpa">⭐ GPA actuel : 3.43 / 4.30</div>
+      </div>
+    </div>
+    <div class="ti reveal">
+      <div class="tl2"><div class="tdot"></div><div class="tline"></div></div>
+      <div>
+        <div class="td">2020 — 2023</div>
+        <div class="ts">Université Abderrahmane Mira — Béjaïa, Algérie</div>
+        <div class="tdeg">Licence en Mathématiques et Informatique</div>
+        <div class="tdet">Solide formation en logique mathématique, structures de données, probabilités, statistiques et analyse numérique. Base fondamentale pour l'optimisation d'algorithmes et la modélisation formelle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section id="about">
+  <div class="awrap">
+    <div class="reveal">
+      <div class="acard">
+        <div class="av">KH</div>
+        <div class="aname">Khaled Hamdaoui</div>
+        <div class="asub2">Étudiant en informatique — UQAC</div>
+        <div class="astats">
+          <div class="astat"><div class="asn">3.43</div><div class="asl">GPA / 4.30</div></div>
+          <div class="astat"><div class="asn">6+</div><div class="asl">Projets</div></div>
+          <div class="astat"><div class="asn">10+</div><div class="asl">Techno.</div></div>
+          <div class="astat"><div class="asn">2027</div><div class="asl">Diplôme</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ainfo reveal">
+      <div class="eyebrow">À propos de moi</div>
+      <h3>Passionné par la sécurité et l'innovation</h3>
+      <div class="asub">Chicoutimi, Québec · Disponible pour stage</div>
+      <p>Étudiant au baccalauréat en informatique à l'UQAC avec une spécialisation en <strong style="color:var(--white)">cybersécurité défensive</strong> et <strong style="color:var(--white)">infonuagique Azure</strong>. Mon parcours combine la rigueur mathématique de ma licence algérienne avec l'expertise technique acquise au Canada.</p>
+      <p>J'ai occupé le rôle de <strong style="color:var(--white)">Scrum Master</strong> dans plusieurs projets académiques, ce qui m'a permis de développer des compétences solides en coordination d'équipe, gestion de backlog et communication avec les parties prenantes.</p>
+      <p>Ma philosophie : construire des systèmes à la fois <strong style="color:var(--white)">robustes, sécurisés et maintenables</strong>. Curieux et autonome, je me tiens constamment à jour sur les évolutions en cybersécurité et cloud.</p>
+      <div class="ichips">
+        <span class="ic icb">📍 Chicoutimi, QC</span>
+        <span class="ic icc">🎓 Bac. Informatique 2027</span>
+        <span class="ic icg">🚗 Permis Classe 5</span>
+        <span class="ic icg">✅ Stage N1 / N2</span>
+      </div>
+      <div class="lsec">
+        <strong>Langues</strong>
+        <div class="lr"><span class="ln">🇫🇷 Français</span><div class="lb"><div class="lbf" style="width:92%"></div></div></div>
+        <div class="lr"><span class="ln">🇬🇧 Anglais technique</span><div class="lb"><div class="lbf" style="width:64%"></div></div></div>
+        <div class="lr"><span class="ln">🇩🇿 Arabe / Kabyle</span><div class="lb"><div class="lbf" style="width:98%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section id="contact">
+  <div class="cbox reveal">
+    <div class="eyebrow" style="display:inline-block;margin-bottom:9px">Contact</div>
+    <h3>Parlons de votre projet ✦</h3>
+    <p>Disponible pour un stage en cybersécurité, cloud Azure ou développement logiciel.</p>
+    <div class="clinks">
+      <a href="mailto:khaledhamdaoui24@gmail.com" class="cl hl">📧 khaledhamdaoui24@gmail.com</a>
+      <a href="tel:+14388725686" class="cl">📞 +1 438-872-5686</a>
+      <a href="https://linkedin.com/in/khaled-hamdaoui-a36067369" target="_blank" rel="noopener" class="cl">💼 LinkedIn</a>
+      <a href="https://github.com" target="_blank" rel="noopener" class="cl">🐙 GitHub</a>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <span>© 2026 Khaled Hamdaoui — UQAC, Chicoutimi QC</span>
+  <span style="color:var(--blue)">Cybersécurité · Cloud Azure · Développement</span>
+</footer>
+ 
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>960){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function a(){cur.style.left=mx+'px';cur.style.top=my+'px';rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px'});el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px'})});
+}
+const mb=document.getElementById('mbtn'),nav2=document.getElementById('nl');
+mb.addEventListener('click',()=>nav2.classList.toggle('open'));
+nav2.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav2.classList.remove('open')));
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*65)});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const bio=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.skbf').forEach(b=>{const w=b.getAttribute('data-w');b.style.width='0';setTimeout(()=>b.style.width=w,180)})});},{threshold:.2});
+document.querySelectorAll('.skc').forEach(c=>bio.observe(c));
+const secs2=document.querySelectorAll('section[id]'),ls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{let c='';secs2.forEach(s=>{if(pageYOffset>=s.offsetTop-160)c=s.id});ls.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href').slice(1)===c)l.classList.add('active')});document.getElementById('nav').style.borderBottomColor=window.scrollY>50?'rgba(74,144,226,.17)':'rgba(74,144,226,.08)'});
+</script>
+</body>
+</html>
+ 
